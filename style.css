@@ -57,6 +57,7 @@ h1 {
 }
 
 .track {
+  position: relative;
   background: color-mix(in srgb, var(--panel) 90%, #000);
   border: 1px solid #2b344f;
   border-radius: 14px;
@@ -66,10 +67,42 @@ h1 {
 }
 
 .letters {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
   gap: 0.7rem;
   min-height: 138px;
+}
+
+.effects {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--hit);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--hit) 65%, transparent);
+  transform: translate(-50%, -50%);
+  animation: particle-burst 400ms ease-out forwards;
+}
+
+@keyframes particle-burst {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(0.35);
+  }
 }
 
 .letter {
