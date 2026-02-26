@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Typing Rhythm</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="game">
+      <header class="hud">
+        <h1>Typing Rhythm</h1>
+        <div class="stats">
+          <span>Score: <strong id="score">0</strong></span>
+          <span>Combo: <strong id="combo">0</strong></span>
+          <span>Misses: <strong id="misses">0</strong></span>
+        </div>
+      </header>
+
+      <section class="track" aria-label="Typing track">
+        <div id="letters" class="letters"></div>
+        <div id="effects" class="effects" aria-hidden="true"></div>
+      </section>
+
+      <p class="hint">Type the leading letter before it expires.</p>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>
